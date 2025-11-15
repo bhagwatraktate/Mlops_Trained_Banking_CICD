@@ -20,7 +20,7 @@ Will the customer leave the bank? (Churn prediction)
 Makes decisions by asking simple if-else questions arranged in a tree structure.
 
 **Example Use Case:**  
- If age > 30 → approve product, else → decline.
+ If age > 30 → approv product, else → decline.
 
 ---
 
