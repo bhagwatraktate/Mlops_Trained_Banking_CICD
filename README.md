@@ -146,7 +146,7 @@ JavaScript collects input and sends a POST request to /predict.
 Example JSON payload:
 
 json
-Copy code
+
 {
   "age": 30,
   "income": 50000,
@@ -158,7 +158,7 @@ Copy code
 }
 2️⃣ Flask Receives the Request
 python
-Copy code
+
 data = request.get_json()
 Converts JSON payload into a Python dictionary.
 
@@ -172,13 +172,13 @@ Converts "male"/"female" and "yes"/"no" to numerical values using LabelEncoder.
 
 5️⃣ Prepare Features for the Model
 python
-Copy code
+
 input_features = np.array([[age, income, loan_amount, loan_term, credit_score, gender_encoded, married_encoded]])
 Converts input into the 2D array format expected by the Random Forest model.
 
 6️⃣ Make Prediction
 python
-Copy code
+
 prediction = model.predict(input_features)
 result = le_approved.inverse_transform(prediction)[0]
 The model predicts 0 or 1.
@@ -187,10 +187,10 @@ Encoders convert it back to "approved" or "denied".
 
 7️⃣ Send Response Back to Frontend
 python
-Copy code
+
 return jsonify({"prediction": result, "status": "success"})
 Frontend receives JSON and displays the result:
 
 text
-Copy code
+
 ✅ Loan Status: APPROVED
