@@ -103,7 +103,7 @@ def predict():
         }), 400
 
 
-@app.route('/healthh', methods=['GET'])
+@app.route('/health', methods=['GET'])
 def health():
     if "successfully" in model_status:
         return jsonify({
